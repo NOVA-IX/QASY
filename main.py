@@ -19,7 +19,7 @@ def mak_req(error):
 
 
 def get_file():
-    return sys.argv[1]
+    return sys.argv[-1]
 
 
 def get_urls(json_dict):
@@ -34,8 +34,10 @@ def get_urls(json_dict):
             break
 
     for i in url_list:
-        # webbrowser.open(i)
-        print(i)
+        if sys.argv[1] == '-w':
+            webbrowser.open(i)
+        else:
+            print(i)
 
 
 if len(sys.argv) == 1:
@@ -43,9 +45,9 @@ if len(sys.argv) == 1:
 else:
     out, err = execute_return("python " + get_file())
     erro = err.decode("utf-8").strip().split("\r\n")[-1]
-    print(erro)
-    print("Loading...")
     if erro:
+        print(erro)
+        print("Loading...")
         filter_error = erro.split(":")
         json1 = mak_req(filter_error[0])
         json2 = mak_req(filter_error[1])
@@ -53,6 +55,5 @@ else:
         get_urls(json1)
         get_urls(json2)
         get_urls(json)
-
     else:
         print("No error")
