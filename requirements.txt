@@ -1,0 +1,4 @@
+google_api_python_client==2.29.0
+python-dotenv==0.19.1
+requests==2.22.0
+sphere_engine==0.27
