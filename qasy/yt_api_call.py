@@ -16,7 +16,7 @@ def ytApi(query):
 
     request = youtube.search().list(
         part="snippet",
-        maxResults=2,
+        maxResults=5,
         order="viewCount",
         q=query
     )

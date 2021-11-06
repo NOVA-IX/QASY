@@ -53,8 +53,6 @@ def get_yt_urls(json_dict):
         else:
             print("{}. {} ({})\n".format(
                 i+1, json_dict['items'][i]['snippet']['title'], url))
-        if i > 4:
-            break
 
 
 def get_source_code():
