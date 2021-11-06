@@ -1,13 +1,14 @@
 import googleapiclient.discovery
 import googleapiclient.errors
-import json
 
-with open('creds.json', 'r') as f:
-    creds = json.load(f)
+import os
+from dotenv import load_dotenv
 
-api_service_name = creds['api_service_name']
-api_version = creds['api_version']
-client_secrets_file = creds['youtube_api_key']
+load_dotenv()
+
+api_service_name = os.getenv("API_SERVICE_NAME")
+api_version = os.getenv("API_VERSION")
+client_secrets_file = os.getenv("YOUTUBE_API_KEY")
 
 
 def ytApi(query):

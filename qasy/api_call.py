@@ -1,19 +1,19 @@
 """
 Example presents error handling for submissions.create() API method
 """
-import json
 from sphere_engine import CompilersClientV4
 from sphere_engine.exceptions import SphereEngineException
 import time
 from urllib.request import urlopen
 
 # define access parameters
-with open('creds.json', 'r') as f:
-    creds = json.load(f)
+import os
+from dotenv import load_dotenv
 
-accessToken = creds['accessToken']
-endpoint = creds['endpoint']
+load_dotenv()
 
+accessToken = os.getenv('ACCESS_TOKEN')
+endpoint = os.getenv('ENDPOINT')
 
 # initialization
 client = CompilersClientV4(accessToken, endpoint)
