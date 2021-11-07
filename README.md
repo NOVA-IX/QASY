@@ -12,6 +12,7 @@ This Open Source Software triggers immediate search for solutions on popular and
 * Step 1: Clone this repository <br />
 ```shell
 git clone https://github.com/NOVA-IX/QASY.git
+cd QASY/
 ```
 * Step 2: Install all necessary packages <br />
 ```shell
